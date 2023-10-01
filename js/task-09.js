@@ -8,8 +8,10 @@ const wrapper = document.querySelector('.widget');
 // console.log(wrapper)
 const btnColorEl = document.querySelector('.change-color');
 // console.log(btnColorEl);
-btnColorEl.addEventListener('click', changeColor)
+const spanEl = document.querySelector('.color');
+btnColorEl.addEventListener('click', changeColor);
 
 function changeColor() {
-  wrapper.style.backgroundColor = getRandomHexColor()
+  wrapper.style.backgroundColor = getRandomHexColor();
+  spanEl.textContent = getRandomHexColor();
 }
