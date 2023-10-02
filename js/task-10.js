@@ -14,23 +14,23 @@ function getRandomHexColor() {
 }
 
 function onClickCreate() {
+  wrapper.innerHTML = ''; //затераєм попредні варіанти
   let divNumber = Number(inputEl.value);
+  const arr = [];
   for (let i = 1; i <= divNumber; i++) {
     const div = document.createElement("div");
     div.id = i; 
     div.style.width = `${i * 10}px`;
     div.style.height = `${i * 10}px`;
     div.style.background = getRandomHexColor();
-
-    wrapper.appendChild(div);
-    
+    arr.push(div);
   }
+
+  wrapper.append(...arr); // додаємо розмітку за одне звернення
 }
 
 function onClickDestroy() {
-  while (wrapper.firstChild) {
-    wrapper.removeChild(wrapper.firstChild);
-  }
+  wrapper.innerHTML = ''; // видаляєм розмітку
 }
 
 

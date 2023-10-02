@@ -11,7 +11,9 @@ const btnColorEl = document.querySelector('.change-color');
 const spanEl = document.querySelector('.color');
 btnColorEl.addEventListener('click', changeColor);
 
+
 function changeColor() {
-  wrapper.style.backgroundColor = getRandomHexColor();
+  let color = getRandomHexColor() // для зрозумілості присвоїв змінній виклик фйнкції для зміни кольору 
+  wrapper.style.backgroundColor = color;
   spanEl.textContent = getRandomHexColor();
 }

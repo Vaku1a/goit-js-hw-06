@@ -1,8 +1,7 @@
 const categoriesNumber = document.querySelector("#categories");
 console.log('Number of categories:', categoriesNumber.childElementCount);
 
-
-const items = document.querySelectorAll('.item');
+const items = [...categoriesNumber.children] // прибрав додаткове звернення до DOM 
 
 items.forEach(item => {
    

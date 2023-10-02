@@ -7,17 +7,16 @@ function handlerSubmit(evt) {
     evt.preventDefault();
 
     const { email, password } = evt.currentTarget.elements;
-    if (email.value == '' || password.value == '') {
+    if (email.value.trim() === '' || password.value.trim() === '') { // додав метод трім та строге порівняння
         alert('Всі поля повинні бути заповнені');   
-    
-    } else {
-        const data = {
-            email: email.value,
-            password: password.value
-        }
-        console.log(data);
-    };
+        return; // додав rerurn для раннього повернення
+    } 
 
+    const data = {
+        email: email.value,
+        password: password.value
+    }
+    console.log(data);
     evt.currentTarget.reset();
     
 }
